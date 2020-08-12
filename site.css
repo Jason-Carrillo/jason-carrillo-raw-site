@@ -1,0 +1,30 @@
+* {
+    background-color: #ade4ff;
+}
+
+#introduction {
+    text-align: center;
+    word-wrap: break-spaces;
+}
+
+#contactbutton {
+    display: inline-block;
+
+}
+
+.section {
+    text-align: center;
+}
+
+
+.lists {
+    width: 100%;
+    border: 1px black solid;
+    list-style-type: none;
+    text-align: right;
+}
+
+.lists li {
+    display: inline;
+    margin: 1em;
+}
