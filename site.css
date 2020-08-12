@@ -18,8 +18,9 @@
 
 
 .lists {
-    width: 100%;
+    width: calc(100% - 50px);
     border: 1px black solid;
+    padding: 1em;
     list-style-type: none;
     text-align: right;
 }
@@ -27,4 +28,8 @@
 .lists li {
     display: inline;
     margin: 1em;
+}
+
+#languages li {
+    text-align: center;
 }
