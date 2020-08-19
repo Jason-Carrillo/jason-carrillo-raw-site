@@ -2,6 +2,10 @@
     background-color: #ade4ff;
 }
 
+body {
+    margin: 0;
+}
+
 header {
     display: flex;
     justify-content: flex-end;
@@ -10,6 +14,11 @@ header {
 header>ul {
     text-align: center;
 
+}
+
+div {
+    display: flex;
+    justify-content: center;
 }
 
 #introduction {
@@ -21,7 +30,10 @@ header>ul {
 
 
 .section {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 5em;
+    width: fit-content;
 }
 
 
@@ -32,18 +44,38 @@ header>ul {
     text-align: right;
 }
 
+.lists a {
+    text-decoration: none;
+}
+
 .lists li {
     display: inline;
     margin: 1em;
-    border: 1px black solid;
 }
 
 #languages {
-    text-align: center;
+    text-align: right;
+    display: block;
+    width: auto;
 }
 
-#languages li {
-    text-align: center;
+#language-list {
+    text-align: right;
+    display: block;
+    width: auto;
+    padding: 0;
+
+}
+
+#language-list li {
+    margin-right: 0;
+
+}
+
+
+
+#education {
+    flex-direction: column;
 }
 
 .contact-buttons {
@@ -67,12 +99,12 @@ footer ul {
     flex-direction: column;
     align-items: center;
     list-style-type: none;
-    padding: 0;
+    padding: 1em;
     margin: 0;
 }
 
 footer ul li {
-    padding-top: 5px;
+    padding-top: 1em;
 }
 
 li a {
