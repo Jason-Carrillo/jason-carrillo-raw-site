@@ -27,7 +27,6 @@ header>ul {
 
 .lists {
     width: fit-content;
-    border: 1px black solid;
     padding: 1em;
     list-style-type: none;
     text-align: right;
@@ -36,7 +35,7 @@ header>ul {
 .lists li {
     display: inline;
     margin: 1em;
-    border: 1px black solid;;
+    border: 1px black solid;
 }
 
 #languages {
@@ -50,6 +49,11 @@ header>ul {
 .contact-buttons {
     display:flex;
     justify-content: flex-end;
+    border: none;
+}
+
+.contact-buttons li {
+    border: none;
 }
 
 footer {
@@ -58,9 +62,25 @@ footer {
 }
 
 footer ul {
-
+    border: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    padding-top: 5px;
+}
+
+li a {
+    color: black;
+
+}
+
+li a:hover {
+    color: pink;
 }
 
