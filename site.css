@@ -45,6 +45,17 @@ div {
 }
 
 
+#project-section {
+    display: block;
+    text-align: right;
+
+}
+
+#projects {
+    display: block;
+    text-align: right;
+}
+
 .lists {
     width: fit-content;
     padding: 1em;
