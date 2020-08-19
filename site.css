@@ -16,6 +16,14 @@ header>ul {
 
 }
 
+#introduction h4, #introduction h1 {
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
 div {
     display: flex;
     justify-content: center;
@@ -32,8 +40,8 @@ div {
 .section {
     display: flex;
     flex-direction: column;
-    padding: 5em;
-    width: fit-content;
+    padding: 3em 5em;
+
 }
 
 
@@ -74,8 +82,15 @@ div {
 
 
 
-#education {
-    flex-direction: column;
+div.section#education {
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+}
+
+h2 {
+    display: flex;
+    justify-self: flex-start;
 }
 
 .contact-buttons {
