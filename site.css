@@ -41,7 +41,7 @@ div {
     display: flex;
     flex-direction: column;
     padding: 3em 5em;
-
+    width: fit-content;
 }
 
 
@@ -62,15 +62,14 @@ div {
 }
 
 #languages {
+    display: flex;
     text-align: right;
-    display: block;
-    width: auto;
+    align-items: flex-end;
 }
 
 #language-list {
     text-align: right;
     display: block;
-    width: auto;
     padding: 0;
 
 }
@@ -82,16 +81,10 @@ div {
 
 
 
-div.section#education {
-    display: flex;
-    align-items: flex-end;
-    margin: 0;
+#education {
+
 }
 
-h2 {
-    display: flex;
-    justify-self: flex-start;
-}
 
 .contact-buttons {
     display:flex;
@@ -130,4 +123,10 @@ li a {
 li a:hover {
     color: pink;
 }
+
+.section:hover {
+    background-color: deepskyblue;
+    color: red;
+}
+
 
