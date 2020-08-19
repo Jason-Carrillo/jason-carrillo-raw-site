@@ -47,10 +47,14 @@ header>ul {
     text-align: center;
 }
 
+.contact-buttons {
+    display:flex;
+    justify-content: flex-end;
+}
+
 footer {
     position: fixed;
     bottom: 0;
-    left: 82em;
 }
 
 footer ul {
