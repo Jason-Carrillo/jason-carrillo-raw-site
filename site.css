@@ -25,8 +25,7 @@ body {
 }
 
 div {
-    display: flex;
-    justify-content: center;
+
 }
 
 #introduction {
@@ -38,22 +37,17 @@ div {
 
 
 .section {
-    display: flex;
-    flex-direction: column;
-    padding: 3em 5em;
-    width: fit-content;
+
 }
 
 
 #project-section {
-    display: block;
-    text-align: right;
+
 
 }
 
 #projects {
-    display: block;
-    text-align: right;
+
 }
 
 .lists {
@@ -73,20 +67,15 @@ div {
 }
 
 #languages {
-    display: flex;
-    text-align: right;
-    align-items: flex-end;
+
 }
 
 #language-list {
-    text-align: right;
-    display: block;
-    padding: 0;
+
 
 }
 
 #language-list li {
-    margin-right: 0;
 
 }
 
@@ -136,7 +125,6 @@ li a:hover {
 }
 
 .section:hover {
-    background-color: deepskyblue;
     color: red;
 }
 
