@@ -16,8 +16,14 @@ header>ul {
 
 }
 
-#introduction h4, #introduction h1 {
+#introduction h4, #introduction h1{
     font-family: 'Press Start 2P', cursive;
+}
+
+.section #my-name {
+    font-family: 'Encode Sans Expanded', sans-serif;
+    font-weight: bold;
+    font-size: 4em;
 }
 
 body {
@@ -29,9 +35,7 @@ div {
 }
 
 #introduction {
-    text-align: center;
-    display: block;
-    width: auto;
+
 }
 
 
@@ -109,6 +113,7 @@ footer ul {
     list-style-type: none;
     padding: 1em;
     margin: 0;
+    background: transparent;
 }
 
 footer ul li {
