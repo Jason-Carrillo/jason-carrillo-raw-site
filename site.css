@@ -1,8 +1,9 @@
 * {
-    background-color: #ade4ff;
+
 }
 
 body {
+    background-color: #ade4ff;
     margin: 0;
 }
 
@@ -134,7 +135,7 @@ li a:hover {
 }
 
 footer, footer ul>li {
-    background: none !important;
+
 }
 
 

@@ -19,77 +19,90 @@
 
 
 
-<body class="bg-dark">
-<header>
+<body class="">
 
-</header>
+    <div class="d-none d-md-block">
+        <ul class="lists">
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Languages</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Contact</a></</li>
+        </ul>
+    </div>
 
-<div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-            <div class="">
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+                <div class="">
 
-                <ul class="lists container text-center">
-                    <li class="col-12 text-center p-2 p-md-0"><a href="#">About Me</a></li>
-                    <li class="col-6 text-center p-2 p-md-0"><a href="#">Languages</a></li>
-                    <li class="col-6 text-center p-2 p-md-0"><a href="#">Projects</a></li>
-                    <li class="col-6 text-center p-2 p-md-0"><a href="#">Education</a></li>
-                    <li class="col-6 text-center p-2 p-md-0"><a href="#">Contact</a></li>
+                    <ul class="lists container-fluid text-center col-12">
+                        <li class="col-6 text-center p-2 p-md-0"><a href="#">About Me</a></li>
+                        <li class="col-6 text-center p-2 p-md-0"><a href="#">Languages</a></li>
+                        <li class="col-6 text-center p-2 p-md-0"><a href="#">Projects</a></li>
+                        <li class="col-6 text-center p-2 p-md-0"><a href="#">Education</a></li>
+                        <li class="col-6 text-center p-2 p-md-0"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark d-md-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-ellipsis-h"></i>
+            </button>
+        </nav>
+    </div>
+
+    <div id="introduction" class="section">
+        <section class="text-center">
+            <h4>Hello, my name is</h4>
+            <h1 id="my-name">Jason Carrillo</h1>
+            <h1>I write code</h1>
+            <p>I am a Software Developer from the city of El Paso, in the Great State of Texas.</p>
+            <p>I create, and design websites</p>
+        </section>
+    </div>
+
+
+    <div>
+        <div class="container">
+
+            <div class="section">
+
+                <h2>Skill set</h2>
+
+                <ul class="lists p-0 d-flex " id="language-list">
+                    <li class="ml-0">Javascript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Bootstrap</li>
+                    <li>jQuery</li>
                 </ul>
             </div>
         </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-</div>
 
-<div id="introduction" class="section">
-    <section class="text-center">
-        <h4>Hello, my name is</h4>
-        <h1 id="my-name">Jason Carrillo</h1>
-        <h1>I write code</h1>
-        <p>I am a Software Developer from the city of El Paso, in the Great State of Texas.</p>
-        <p>I create, and design websites</p>
-    </section>
-</div>
+        <div class="container">
 
+            <div id="project-section section">
+                <h2>Projects</h2>
+                <h4>Software Developer</h4>
+                <p>Created websites using HTML, CSS, and Javascript</p>
+            </div>
+        </div>
 
-<div>
-    <div class="container">
-
-        <div class="section">
-
-            <h2>Skill set</h2>
-
-            <ul class="lists p-0 d-flex " id="language-list">
-                <li class="ml-0">Javascript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Bootstrap</li>
-                <li>jQuery</li>
-            </ul>
+        <div class="container">
+            <div class="section " id="education">
+                <h2>Education</h2>
+                <p>2020 Codeup: Software Developer</p>
+                <p>2019 University of Texas at El Paso: Bachelors of Arts in Psychology</p>
+            </div>
         </div>
     </div>
 
-    <div class="container">
 
-        <div id="project-section section">
-            <h2>Projects</h2>
-            <h4>Software Developer</h4>
-            <p>Created websites using HTML, CSS, and Javascript</p>
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="section " id="education">
-            <h2>Education</h2>
-            <p>2020 Codeup: Software Developer</p>
-            <p>2019 University of Texas at El Paso: Bachelors of Arts in Psychology</p>
-        </div>
-    </div>
-</div>
+
+
+</body>
 
 <div class="contact-buttons">
 
@@ -106,15 +119,10 @@
     </footer>
 </div>
 
-
-
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
-
-</body>
 
 
 
