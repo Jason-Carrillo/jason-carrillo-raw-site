@@ -1,70 +1,115 @@
-mapboxgl.accessToken = mapBoxToken;
+(function () {
 
 
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        "APPID": weatherKey,
+        "q": "El Paso, US",
+        "units": "imperial"
+    }).done(function (data) {
+        console.log(data)
+        console.log(data.city.name)
+        console.log(data.list[0].main)
+        console.log(data.list[0].main.temp)
+        console.log(data.list[0].main.temp_max)
 
-geocode("el paso, tx, 79938", mapBoxTokenAPI)
-    .then(function(result) {
-        console.log(result)
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
-            center: result, // starting position [lng, lat]
-            zoom: 10 // starting zoom
-        });
+        for (i = 0; i < data.list.length; i += 8) {
 
-        geocode("12302 montana ave, el paso, tx, 79938", mapBoxTokenAPI)
-            .then(function(result) {
-                console.log(result)
+            var thisCity =
+                "<div class='card bg-dark text-white col-10 text-center'>" +
+                "<img class='card-img'" +
+                "<div class='card-img-overlay'>" +
+                "<h2 class='card-title'>City: " + data.city.name + "</h2>" +
+                "<h3 class='card-text'>Temperature: " + Math.round(data.list[i].main.temp) + " °F</h3>" +
+                "<h5 class='card-text'> Max Temperature: " + Math.round(data.list[i].main.temp_max) + " °F</h5>" +
+                "</div>" +
+                "</div>"
 
-                var marker = new mapboxgl.Marker()
-                    .setLngLat(result)
-                    .addTo(map);
+            $("#weather").append(thisCity)
 
-                var popupPho = new mapboxgl.Popup(marker)
-                    .setLngLat(result)
-                    .setHTML("<p>Pho Tre Bien</p>")
-                // .addTo(map)
-
-                marker.setPopup(popupPho)
-
-
-            });
-
-        geocode("9627 Sims Dr a, El Paso, TX 79925", mapBoxTokenAPI)
-            .then(function(result2) {
-                console.log(result2)
-
-                var marker = new mapboxgl.Marker()
-                    .setLngLat(result2)
-                    .addTo(map);
-
-                var popupBam = new mapboxgl.Popup(marker)
-                    .setLngLat(result2)
-                    .setHTML("<p>Bamboo Kitchen</p>")
-                // .addTo(map)
-
-                marker.setPopup(popupBam)
-
-
-            });
-
-        geocode("1360 George Dieter Dr, El Paso, TX 79936", mapBoxTokenAPI)
-            .then(function(result3) {
-                console.log(result3)
-
-                var marker = new mapboxgl.Marker()
-                    .setLngLat(result3)
-                    .addTo(map);
-
-                var popupFam = new mapboxgl.Popup(marker)
-                    .setLngLat(result3)
-                    .setHTML("<p>Famous Dave's</p>")
-                // .addTo(map)
-
-                marker.setPopup(popupFam)
-
-
-            });
+        }
 
 
     });
+
+
+    function searchCity() {
+        var typedCitySearch = $("#box-city-search").val()
+
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            "APPID": weatherKey,
+            "q": typedCitySearch,
+            "units": "imperial"
+        }).done(function (data) {
+
+            $("#weather").empty()
+
+            for (i = 0; i < data.list.length; i += 8) {
+
+
+                var thisCity =
+                    "<div class='card bg-dark text-white '>" +
+                    "<img class='card-img'" +
+                    "<div class='card-img-overlay'>" +
+                    "<h2 class='card-title'>City: " + data.city.name + "</h2>" +
+                    "<h3 class='card-text'>Temperature: " + Math.round(data.list[i].main.temp) + " °F</h3>" +
+                    "<h6 class='card-text'> Max Temperature: " + Math.round(data.list[i].main.temp_max) + " °F</h6>" +
+                    "</div>" +
+                    "</div>"
+                $("#weather").append(thisCity)
+            }
+            ;
+        });
+    };
+
+
+    $("#button-city-search").click(searchCity)
+
+
+    geocode("El Paso", weatherKey)
+        .then(function (result) {
+            console.log(result)
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
+                center: result, // starting position [lng, lat]
+                zoom: 10 // starting zoom
+            });
+
+            var marker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map);
+
+        });
+
+
+    mapboxgl.accessToken = weatherKey;
+
+    function searchMap() {
+
+        var typedCitySearch = $("#box-city-search").val()
+
+        geocode(typedCitySearch, weatherKey)
+            .then(function (result) {
+                console.log(result)
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
+                    center: result, // starting position [lng, lat]
+                    zoom: 10 // starting zoom
+
+                });
+
+                var marker = new mapboxgl.Marker()
+                    .setLngLat(result)
+                    .addTo(map);
+
+
+            });
+
+    };
+
+
+    $("#button-city-search").click(searchMap)
+
+})()
+
