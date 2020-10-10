@@ -3,7 +3,7 @@
 
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         "APPID": weatherKey,
-        "q": "El Paso, US",
+        "q": "Dallas, US",
         "units": "imperial"
     }).done(function (data) {
         console.log(data)
@@ -12,9 +12,9 @@
         console.log(data.list[0].main.temp)
         console.log(data.list[0].main.temp_max)
 
-        for (i = 0; i < data.list.length; i += 8) {
+        for (let i = 0; i < data.list.length; i += 8) {
 
-            var thisCity =
+            let thisCity =
                 "<div class='card bg-dark text-white col-10 text-center'>" +
                 "<img class='card-img'" +
                 "<div class='card-img-overlay'>" +
@@ -43,7 +43,7 @@
 
             $("#weather").empty()
 
-            for (i = 0; i < data.list.length; i += 8) {
+            for (let i = 0; i < data.list.length; i += 8) {
 
 
                 var thisCity =
@@ -66,13 +66,13 @@
 
 
     geocode("El Paso", weatherKey)
-        .then(function (result) {
+        .then(function(result) {
             console.log(result)
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
                 center: result, // starting position [lng, lat]
-                zoom: 10 // starting zoom
+                zoom:10 // starting zoom
             });
 
             var marker = new mapboxgl.Marker()
