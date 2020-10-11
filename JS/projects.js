@@ -31,7 +31,6 @@
 
     });
 
-
     function searchCity() {
         var typedCitySearch = $("#box-city-search").val()
 
@@ -65,7 +64,7 @@
     $("#button-city-search").click(searchCity)
 
 
-    geocode("El Paso", weatherKey)
+    geocode("El Paso", mapKey)
         .then(function(result) {
             console.log(result)
             var map = new mapboxgl.Map({
@@ -82,13 +81,13 @@
         });
 
 
-    mapboxgl.accessToken = weatherKey;
+    mapboxgl.accessToken = mapKey;
 
     function searchMap() {
 
         var typedCitySearch = $("#box-city-search").val()
 
-        geocode(typedCitySearch, weatherKey)
+        geocode(typedCitySearch, mapKey)
             .then(function (result) {
                 console.log(result)
                 var map = new mapboxgl.Map({
