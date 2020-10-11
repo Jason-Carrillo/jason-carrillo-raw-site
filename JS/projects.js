@@ -1,6 +1,8 @@
 (function () {
 
 
+    mapboxgl.accessToken = mapKey;
+
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         "APPID": weatherKey,
         "q": "El Paso, US",
@@ -31,12 +33,28 @@
 
     });
 
+    geocode("El Paso", mapKey)
+        .then(function(result) {
+            console.log(result)
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
+                center: result, // starting position [lng, lat]
+                zoom:10 // starting zoom
+            });
+
+            var marker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map);
+
+        });
+
     function searchCity() {
         var typedCitySearch = $("#box-city-search").val()
 
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             "APPID": weatherKey,
-            "q": typedCitySearch,
+            "q": "Dallas, TX",
             "units": "imperial"
         }).done(function (data) {
 
@@ -44,6 +62,9 @@
 
             for (let i = 0; i < data.list.length; i += 8) {
 
+                console.log(data.city)
+                console.log(data.city.name)
+                console.log(data.list[i].main.temp)
 
                 var thisCity =
                     "<div class='card bg-dark text-white '>" +
@@ -64,24 +85,7 @@
     $("#button-city-search").click(searchCity)
 
 
-    geocode("El Paso", mapKey)
-        .then(function(result) {
-            console.log(result)
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
-                center: result, // starting position [lng, lat]
-                zoom:10 // starting zoom
-            });
 
-            var marker = new mapboxgl.Marker()
-                .setLngLat(result)
-                .addTo(map);
-
-        });
-
-
-    mapboxgl.accessToken = mapKey;
 
     function searchMap() {
 
@@ -110,5 +114,8 @@
 
     $("#button-city-search").click(searchMap)
 
+
+
+    // IIFE
 })()
 
