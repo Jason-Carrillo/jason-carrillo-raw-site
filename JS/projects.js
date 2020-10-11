@@ -49,6 +49,8 @@
 
         });
 
+    //TODO Make search city button work.
+
     function searchCity() {
         var typedCitySearch = $("#box-city-search").val()
 
