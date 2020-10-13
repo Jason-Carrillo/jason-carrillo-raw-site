@@ -33,7 +33,7 @@
 
     });
 
-    geocode("El Paso", mapKey)
+    geocode("El Paso, TX", mapKey)
         .then(function(result) {
             console.log(result)
             var map = new mapboxgl.Map({
@@ -56,7 +56,7 @@
 
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             "APPID": weatherKey,
-            "q": "Dallas, TX",
+            "q": typedCitySearch,
             "units": "imperial"
         }).done(function (data) {
 
@@ -79,7 +79,6 @@
                     "</div>"
                 $("#weather").append(thisCity)
             }
-            ;
         });
     };
 
@@ -90,6 +89,8 @@
 
 
     function searchMap() {
+
+        console.log("test")
 
         var typedCitySearch = $("#box-city-search").val()
 
@@ -107,14 +108,59 @@
                 var marker = new mapboxgl.Marker()
                     .setLngLat(result)
                     .addTo(map);
-
-
             });
-
     };
 
+    // geocode("El Paso", mapKey)
+    //     .then(function(result) {
+    //         console.log(result)
+    //         var map = new mapboxgl.Map({
+    //             container: 'map',
+    //             style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
+    //             center: result, // starting position [lng, lat]
+    //             zoom:10 // starting zoom
+    //         });
+    //
+    //         var marker = new mapboxgl.Marker()
+    //             .setLngLat(result)
+    //             .addTo(map);
+    //
+    //     });
 
-    $("#button-city-search").click(searchMap)
+
+    document.getElementById("button-city-search").addEventListener("click",function(e) {
+        geocode(typedCitySearch, mapKey)
+            .then(function (result) {
+                console.log(result)
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
+                    center: result, // starting position [lng, lat]
+                    zoom: 10 // starting zoom
+
+                });
+
+                var marker = new mapboxgl.Marker()
+                    .setLngLat(result)
+                    .addTo(map);
+            })
+    })
+
+
+    // $("#button-city-search").click(searchMap(){
+    //     e.preventDefault();
+    // });
+
+    // document.getElementById("myAnchor").addEventListener("click", function(event){
+    //     event.preventDefault()
+    // });
+
+    // $( "a" ).click(function( event ) {
+    //     event.preventDefault();
+    //     $( "<div>" )
+    //         .append( "default " + event.type + " prevented" )
+    //         .appendTo( "#log" );
+    // });
 
 
 
