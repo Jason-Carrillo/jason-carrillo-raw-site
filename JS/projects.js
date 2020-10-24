@@ -128,28 +128,28 @@
     //     });
 
 
-    document.getElementById("button-city-search").addEventListener("click",function(e) {
-        geocode(typedCitySearch, mapKey)
-            .then(function (result) {
-                console.log(result)
-                var map = new mapboxgl.Map({
-                    container: 'map',
-                    style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
-                    center: result, // starting position [lng, lat]
-                    zoom: 10 // starting zoom
+    // document.getElementById("button-city-search").addEventListener("click",function(e) {
+    //     geocode(typedCitySearch, mapKey)
+    //         .then(function (result) {
+    //             console.log(result)
+    //             var map = new mapboxgl.Map({
+    //                 container: 'map',
+    //                 style: 'mapbox://styles/mapbox/navigation-guidance-night-v4', // stylesheet location
+    //                 center: result, // starting position [lng, lat]
+    //                 zoom: 10 // starting zoom
+    //
+    //             });
+    //
+    //             var marker = new mapboxgl.Marker()
+    //                 .setLngLat(result)
+    //                 .addTo(map);
+    //         })
+    // })
 
-                });
 
-                var marker = new mapboxgl.Marker()
-                    .setLngLat(result)
-                    .addTo(map);
-            })
+    $("#button-city-search").click(searchMap(e){
+        e.preventDefault()
     })
-
-
-    // $("#button-city-search").click(searchMap(){
-    //     e.preventDefault();
-    // });
 
     // document.getElementById("myAnchor").addEventListener("click", function(event){
     //     event.preventDefault()
