@@ -130,7 +130,11 @@ li a:hover {
     color: pink;
 }
 
-.section:hover {
+.section>h2:hover {
+    color: red;
+}
+
+.lanSkill:hover {
     color: red;
 }
 
