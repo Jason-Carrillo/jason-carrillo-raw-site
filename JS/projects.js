@@ -147,9 +147,9 @@
     // })
 
 
-    $("#button-city-search").click(searchMap(e){
-        e.preventDefault()
-    })
+    // $("#button-city-search").click(searchMap(e){
+    //     e.preventDefault()
+    // })
 
     // document.getElementById("myAnchor").addEventListener("click", function(event){
     //     event.preventDefault()
