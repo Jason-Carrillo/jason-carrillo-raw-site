@@ -55,7 +55,7 @@ div {
 
 .lists {
     width: fit-content;
-    padding: 1em;
+    padding-top: 1em;
     list-style-type: none;
     text-align: right;
 }
