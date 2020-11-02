@@ -7,14 +7,12 @@ body {
     margin: 0;
 }
 
-/*header {*/
-/*    display: flex;*/
-/*    justify-content: flex-end;*/
-/*}*/
+.header {
+    background-color: #BC8EF3;
+}
 
 header>ul {
     text-align: center;
-
 }
 
 #introduction h4, #introduction h1{
