@@ -7,10 +7,10 @@ body {
     margin: 0;
 }
 
-header {
-    display: flex;
-    justify-content: flex-end;
-}
+/*header {*/
+/*    display: flex;*/
+/*    justify-content: flex-end;*/
+/*}*/
 
 header>ul {
     text-align: center;
