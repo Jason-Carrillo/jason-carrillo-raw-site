@@ -73,7 +73,6 @@
                     "<div class='card-img-overlay'>" +
                     "<h2 class='card-title'>City: " + data.city.name + "</h2>" +
                     "<h4 class='card-text'>Temperature: " + Math.round(data.list[i].main.temp) + " °F</h4>" +
-                    "<h6 class='card-text'> Max Temperature: " + Math.round(data.list[i].main.temp_max) + " °F</h6>" +
                     "</div>" +
                     "</div>"
                 $("#weather").append(thisCity)
