@@ -5,7 +5,7 @@
 
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         "APPID": weatherKey,
-        "q": "El Paso, US",
+        "q": "Dallas, US",
         "units": "imperial"
     }).done(function (data) {
         console.log(data)
@@ -21,8 +21,7 @@
                 "<img class='card-img'" +
                 "<div class='card-img-overlay'>" +
                 "<h2 class='card-title'>City: " + data.city.name + "</h2>" +
-                "<h3 class='card-text'>Temperature: " + Math.round(data.list[i].main.temp) + " °F</h3>" +
-                "<h5 class='card-text'> Max Temperature: " + Math.round(data.list[i].main.temp_max) + " °F</h5>" +
+                "<h5 class='card-text'>Temperature: " + Math.round(data.list[i].main.temp) + " °F</h5>" +
                 "</div>" +
                 "</div>"
 
@@ -73,7 +72,7 @@
                     "<img class='card-img'" +
                     "<div class='card-img-overlay'>" +
                     "<h2 class='card-title'>City: " + data.city.name + "</h2>" +
-                    "<h3 class='card-text'>Temperature: " + Math.round(data.list[i].main.temp) + " °F</h3>" +
+                    "<h4 class='card-text'>Temperature: " + Math.round(data.list[i].main.temp) + " °F</h4>" +
                     "<h6 class='card-text'> Max Temperature: " + Math.round(data.list[i].main.temp_max) + " °F</h6>" +
                     "</div>" +
                     "</div>"
