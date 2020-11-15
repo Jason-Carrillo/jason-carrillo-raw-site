@@ -32,6 +32,47 @@
 
     });
 
+
+    $("#button-city-search").click(searchCity)
+
+
+    //TODO Make search city button work.
+
+    function searchCity() {
+        var typedCitySearch = $("#box-city-search").val()
+
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            "APPID": weatherKey,
+            "q": typedCitySearch,
+            "units": "imperial"
+        }).done(function (data) {
+
+            $("#weather").empty();
+
+            console.log(data)
+            console.log(data.city.name)
+            console.log(data.list[0].main)
+            console.log(data.list[0].main.temp)
+            console.log(data.list[0].main.temp_max)
+
+            for (let i = 0; i < data.list.length; i += 8) {
+
+                let thisCity =
+                    "<div class='card bg-dark text-white col-10 text-center'>" +
+                    "<img class='card-img'" +
+                    "<div class='card-img-overlay'>" +
+                    "<h2 class='card-title'>City: " + data.city.name + "</h2>" +
+                    "<h5 class='card-text'>Temperature: " + Math.round(data.list[i].main.temp) + " °F</h5>" +
+                    "</div>" +
+                    "</div>"
+
+                $("#weather").append(thisCity)
+
+            }
+        });
+    };
+
+
     geocode("El Paso, TX", mapKey)
         .then(function(result) {
             console.log(result)
@@ -47,44 +88,6 @@
                 .addTo(map);
 
         });
-
-    //TODO Make search city button work.
-
-    function searchCity() {
-        var typedCitySearch = $("#box-city-search").val()
-
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
-            "APPID": weatherKey,
-            "q": typedCitySearch,
-            "units": "imperial"
-        }).done(function (data) {
-
-            $('#weather').empty()
-
-            for (let i = 0; i < data.list.length; i += 8) {
-
-                console.log(data.city)
-                console.log(data.city.name)
-                console.log(data.list[i].main.temp)
-
-                var thisCity =
-                    "<div class='card bg-dark text-white '>" +
-                    "<img class='card-img'" +
-                    "<div class='card-img-overlay'>" +
-                    "<h2 class='card-title'>City: " + data.city.name + "</h2>" +
-                    "<h4 class='card-text'>Temperature: " + Math.round(data.list[i].main.temp) + " °F</h4>" +
-                    "</div>" +
-                    "</div>"
-                $("#weather").append(thisCity)
-            }
-        });
-    };
-
-
-    $("#button-city-search").click(searchCity)
-
-
-
 
     function searchMap() {
 
